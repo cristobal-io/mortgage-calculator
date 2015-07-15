@@ -6,14 +6,8 @@ LINT_DIR = $(wildcard *.js test/*.js lib/*.js test/**/*.json spikes/*)
 setup:
 	npm install
 
-grunt-server:
-	grunt server
-
 path:
 	echo $$PATH
-
-which:
-	which grunt
 
 # run test with dependencies lint and jscs
 test: setup lint style
