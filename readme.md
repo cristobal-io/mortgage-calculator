@@ -6,18 +6,19 @@ It is based on the assumption that no more than 36% of your salary before taxes 
 
 You can check the article about the [Underwriter](http://www.realtor.com/advice/the-underwriter-unseen-approver-of-your-mortgage/) for more information.
 
-The maximum allowed by law is a 43% before taxes, however many articles suggest that you shouldn't take a mortgage over 38%.
+The maximum allowed by law is a 43% before taxes, however many articles suggest that you shouldn't take a mortgage over 36%.
 
 ---
 
 ## Formulas
 
 - The formula used to obtain the payment:
-$$maxPay = (monthlyIncome - monthlyExpenses) * riskRate $$
 
-- The formula used to obtain the mortgage [^1] :
+![payment](./img/max_payment_formula.png)
 
-$$mortgage = \frac{pay * (1 - ((1 +monthlyInterest)^{-totalPeriods})) }{monthlyInterest}$$
+- The formula used to obtain the mortgage <sup>[1](#formula)</sup> :
+
+![mortgage_formula](./img/mortgage_formula.png)
 
 ---
 
@@ -134,4 +135,6 @@ make test
 - For linting uses http://jshint.com/
 - For style uses http://jscs.info/ 
 
-[^1]: _This formula comes from:_ $$pay = \frac{mortgage*monthlyInterest}{1-(1+monthlyInterest)^{-totalPeriods}}$$
+<a name="formula">1</a>: _This formula comes from:_
+
+ ![payment](./img/payment_mortgage_formula.png)
