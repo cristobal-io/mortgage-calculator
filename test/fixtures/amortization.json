@@ -1,0 +1,154 @@
+[{
+  "explanation": "01: simple number :",
+  "input": [5000, 423.47, 12, 0.03],
+  "output": [{
+      "period": 1,
+      "amortizationInterest": 12.5,
+      "amortizationCapital": 410.97,
+      "remainingCapital": 4576.53
+    },
+
+    {
+      "period": 2,
+      "amortizationInterest": 11.441324999999999,
+      "amortizationCapital": 412.028675,
+      "remainingCapital": 4153.0599999999995
+    },
+
+    {
+      "period": 3,
+      "amortizationInterest": 10.382649999999998,
+      "amortizationCapital": 413.08735,
+      "remainingCapital": 3729.5899999999992
+    },
+
+    {
+      "period": 4,
+      "amortizationInterest": 9.323974999999999,
+      "amortizationCapital": 414.146025,
+      "remainingCapital": 3306.119999999999
+    },
+
+    {
+      "period": 5,
+      "amortizationInterest": 8.265299999999998,
+      "amortizationCapital": 415.2047,
+      "remainingCapital": 2882.6499999999987
+    },
+
+    {
+      "period": 6,
+      "amortizationInterest": 7.206624999999997,
+      "amortizationCapital": 416.26337500000005,
+      "remainingCapital": 2459.1799999999985
+    },
+
+    {
+      "period": 7,
+      "amortizationInterest": 6.147949999999996,
+      "amortizationCapital": 417.32205000000005,
+      "remainingCapital": 2035.7099999999984
+    },
+
+    {
+      "period": 8,
+      "amortizationInterest": 5.089274999999996,
+      "amortizationCapital": 418.38072500000004,
+      "remainingCapital": 1612.2399999999984
+    },
+
+    {
+      "period": 9,
+      "amortizationInterest": 4.030599999999996,
+      "amortizationCapital": 419.43940000000003,
+      "remainingCapital": 1188.7699999999984
+    },
+
+    {
+      "period": 10,
+      "amortizationInterest": 2.971924999999996,
+      "amortizationCapital": 420.49807500000003,
+      "remainingCapital": 765.2999999999984
+    },
+
+    {
+      "period": 11,
+      "amortizationInterest": 1.913249999999996,
+      "amortizationCapital": 421.55675,
+      "remainingCapital": 341.82999999999834
+    },
+
+    {
+      "period": 12,
+      "amortizationInterest": 0.8545749999999959,
+      "amortizationCapital": 341.82999999999834,
+      "remainingCapital": -0.8545750000000112
+    }
+  ]
+
+}, {
+  "explanation": "02: math",
+  "input": [10000, 846.94, 12, 0.03],
+  "output": [{
+    "period": 1,
+    "amortizationInterest": 25,
+    "amortizationCapital": 821.94,
+    "remainingCapital": 9153.06
+  }, {
+    "period": 2,
+    "amortizationInterest": 22.882649999999998,
+    "amortizationCapital": 824.05735,
+    "remainingCapital": 8306.119999999999
+  }, {
+    "period": 3,
+    "amortizationInterest": 20.765299999999996,
+    "amortizationCapital": 826.1747,
+    "remainingCapital": 7459.1799999999985
+  }, {
+    "period": 4,
+    "amortizationInterest": 18.647949999999998,
+    "amortizationCapital": 828.29205,
+    "remainingCapital": 6612.239999999998
+  }, {
+    "period": 5,
+    "amortizationInterest": 16.530599999999996,
+    "amortizationCapital": 830.4094,
+    "remainingCapital": 5765.299999999997
+  }, {
+    "period": 6,
+    "amortizationInterest": 14.413249999999994,
+    "amortizationCapital": 832.5267500000001,
+    "remainingCapital": 4918.359999999997
+  }, {
+    "period": 7,
+    "amortizationInterest": 12.295899999999993,
+    "amortizationCapital": 834.6441000000001,
+    "remainingCapital": 4071.419999999997
+  }, {
+    "period": 8,
+    "amortizationInterest": 10.178549999999992,
+    "amortizationCapital": 836.7614500000001,
+    "remainingCapital": 3224.479999999997
+  }, {
+    "period": 9,
+    "amortizationInterest": 8.061199999999992,
+    "amortizationCapital": 838.8788000000001,
+    "remainingCapital": 2377.539999999997
+  }, {
+    "period": 10,
+    "amortizationInterest": 5.943849999999992,
+    "amortizationCapital": 840.9961500000001,
+    "remainingCapital": 1530.5999999999967
+  }, {
+    "period": 11,
+    "amortizationInterest": 3.826499999999992,
+    "amortizationCapital": 843.1135,
+    "remainingCapital": 683.6599999999967
+  }, {
+    "period": 12,
+    "amortizationInterest": 1.7091499999999917,
+    "amortizationCapital": 683.6599999999967,
+    "remainingCapital": -1.7091500000000224
+  }]
+
+}]

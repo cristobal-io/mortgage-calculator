@@ -1,0 +1,90 @@
+[{
+  "explanation": "01: term = 2, should use default 10",
+  "input": [{
+    "initialDeposit": 0,
+    "monthlyIncome": 2000,
+    "interest": 2,
+    "term": 2,
+    "monthlyExpenses": 800
+  }],
+  "output": {
+    "maxMonthlyPayment": 432,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 46949.655942617734,
+    "mortgageTotal": 46949.655942617734
+  }
+}, {
+  "explanation": "02: math, with deposit 15500",
+  "input": [{
+    "initialDeposit": 15500,
+    "monthlyIncome": 2000,
+    "interest": 3,
+    "term": 20,
+    "monthlyExpenses": 800
+  }],
+  "output": {
+    "maxMonthlyPayment": 432,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 93394.31502618745,
+    "mortgageTotal": 77894.31502618745
+  }
+}, {
+  "explanation": "03: math",
+  "input": [{
+    "initialDeposit": 20100,
+    "monthlyIncome": 2000,
+    "interest": 3,
+    "term": 20,
+    "monthlyExpenses": 800
+  }],
+  "output": {
+    "maxMonthlyPayment": 432,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 97994.31502618745,
+    "mortgageTotal": 77894.31502618745
+  }
+}, {
+  "explanation": "04: math",
+  "input": [{
+    "monthlyIncome": 2000,
+    "interest": 3,
+    "term": 20,
+    "monthlyExpenses": 8000
+  }],
+  "output": {
+    "maxMonthlyPayment": 0,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 0,
+    "mortgageTotal": 0
+  }
+}, {
+  "explanation": "05: math",
+  "input": [{
+    "monthlyIncome": 2000,
+    "interest": 3,
+    "term": 20
+  }],
+  "output": {
+    "maxMonthlyPayment": 720,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 129823.85837697909,
+    "mortgageTotal": 129823.85837697909
+  }
+}, {
+  "explanation": "06: max age 50 and age 35, request term 20,new term 15",
+  "input": [{
+    "monthlyIncome": 2000,
+    "interest": 3,
+    "term": 20,
+    "age": 35,
+    "settings": {
+      "maxAge": 50
+    }
+  }],
+  "output": {
+    "maxMonthlyPayment": 720,
+    "monthlyIncome": 2000,
+    "totalPriceHouse": 104259.93944903568,
+    "mortgageTotal": 104259.93944903568
+  }
+}]
