@@ -1,6 +1,6 @@
 {
   "name": "mortgage-calculator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "package for basic calculation mortgage",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,19 @@
     "finance"
   ],
   "author": "Cristobal Gomez",
+  "homepage": "https://github.com/cristobal-io/mortgage-calculator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cristobal-io/mortgage-calculator"
+  },
+  "bugs": {
+    "url": "http://github.com/cristobal-io/mortgage-calculator/issues",
+    "email": "me@cristobal.io"
+  },
   "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.x"
+  },
   "dependencies": {
     "lodash": "3.9.3"
   },
