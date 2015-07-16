@@ -20,8 +20,8 @@ var expect = require("expect.js"),
 
 describe("When passing different values than defaults it:", function () {
 
-  it("should return defaults :€0,90", function () {
-    expect(formatMoney.apply(null, [0.90123])).to.be("€0,90");
+  it("should return defaults :$0.90", function () {
+    expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
   });
 
   it("should return different from defaults :$0,901", function () {
@@ -42,15 +42,15 @@ describe("When passing different values than defaults it:", function () {
     }])).to.be("¶0,9012");
   });
 
-  it("should return defaults :€0,90", function () {
-    expect(formatMoney.apply(null, [0.90123])).to.be("€0,90");
+  it("should return defaults :$0,90", function () {
+    expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
   });
 
   it("should return different from defaults :¶0,90123", function () {
     expect(formatMoney.apply(null, [0.90123, {
       "places": 5,
       "symbol": "¶"
-    }])).to.be("¶0,90123");
+    }])).to.be("¶0.90123");
   });
 
 });
@@ -61,8 +61,8 @@ describe("when using the formatMoney function, it:", function () {
     expect(formatMoney).to.be.a("function");
   });
 
-  it("should give the result €2.000,00", function () {
-    expect(formatMoney(2000)).to.eql("€2.000,00");
+  it("should give the result $2,000.00", function () {
+    expect(formatMoney(2000)).to.eql("$2,000.00");
   });
 
   it("should not modify original options", function () {
@@ -70,7 +70,9 @@ describe("when using the formatMoney function, it:", function () {
       "places": 4
     };
     formatMoney(2000, options);
-    expect(options).to.eql({"places": 4});
+    expect(options).to.eql({
+      "places": 4
+    });
   });
 });
 

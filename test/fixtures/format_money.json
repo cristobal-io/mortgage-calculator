@@ -1,28 +1,27 @@
-[
-{
+[{
   "explanation": "01: simple number :",
   "input": [123],
-  "output": "€123,00"
+  "output": "$123.00"
 }, {
   "explanation": "02: long number with more than 3 decimals :",
   "input": [12345678.90123],
-  "output": "€12.345.678,90"
+  "output": "$12,345,678.90"
 }, {
   "explanation": "03: really long number with default values :",
   "input": [123456781234567812345678123456781234567812345],
-  "output": "€1,2345678123456782e+44"
+  "output": "$1.2345678123456782e+44"
 }, {
   "explanation": "04: millions with default values :",
   "input": [12345678.90123],
-  "output": "€12.345.678,90"
+  "output": "$12,345,678.90"
 }, {
   "explanation": "05: negative number with default values :",
   "input": [-12345678.90123],
-  "output": "€-12.345.678,90"
+  "output": "$-12,345,678.90"
 }, {
-  "explanation": "06: decimal number, with 5 decimals to test defaults :1",
+  "explanation": "06: decimal number, with 5 decimals to test defaults :",
   "input": [0.90123],
-  "output": "€0,90"
+  "output": "$0.90"
 }, {
   "explanation": "07: different values than default, $ and 3 decimals: ",
   "input": [0.90123, {
@@ -36,28 +35,28 @@
   "explanation": "08: differ val than default, thousand and decimal symbol: ",
   "input": [1000.90123, {
     "places": 2,
-    "thousand": ",",
-    "decimal": "."
+    "thousand": ".",
+    "decimal": ","
   }],
-  "output": "€1,000.90"
+  "output": "$1.000,90"
 }, {
   "explanation": "09: different from default, 3 decimal position :",
   "input": [0.90123, {
     "places": 3,
     "symbol": "€",
-    "thousand": ",",
-    "decimal": "."
+    "thousand": ".",
+    "decimal": ","
   }],
-  "output": "€0.901"
+  "output": "€0,901"
 }, {
   "explanation": "10: different from default",
   "input": [901232233, {
     "places": 3,
     "symbol": "€",
-    "thousand": ",",
-    "decimal": "."
+    "thousand": ".",
+    "decimal": ","
   }],
-  "output": "€901,232,233.000"
+  "output": "€901.232.233,000"
 }, {
   "explanation": "11: differ from def and same symbol thousand and decimal :",
   "input": [901232233, {
@@ -72,26 +71,25 @@
   "input": ["", {
     "places": 3,
     "symbol": "€",
-    "thousand": ",",
-    "decimal": "."
+    "thousand": ".",
+    "decimal": ","
   }],
-  "output": "€0.000"
+  "output": "€0,000"
 }, {
   "explanation": "13: passed an string and different values than defaults :",
   "input": ["aa", {
     "places": 3,
     "symbol": "€",
-    "thousand": ",",
-    "decimal": "."
+    "thousand": ".",
+    "decimal": ","
   }],
-  "output": "€0.000"
+  "output": "€0,000"
 }, {
   "explanation": "14: no imput passed :",
   "input": [],
-  "output": "€0,00"
+  "output": "$0.00"
 }, {
   "explanation": "15: passed an string with defaults :",
   "input": ["aa"],
-  "output": "€0,00"
-}
-]
+  "output": "$0.00"
+}]
