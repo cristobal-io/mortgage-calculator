@@ -32,10 +32,17 @@ style:
 # Continuous Integration Test Runner
 ci: lint style test
 	echo "1. Make sure 'git status' is clean."
-	echo "2. Build on the integration box."
-	echo "3. 'git checkout integration'"
-	echo "4. 'git merge branch_desired_to_bring_to_integration --no-ff --log'"
-	echo "5. 'git checkout master'"
+	echo "2. 'git checkout -b (release-x.x.x || hotfix-x.x.x) master"
+	echo "3. 'git merge development --no-ff --log'"
+	echo "4. 'Make release'"
+
+release: lint style test
+	echo "1. 'git checkout master'"
+	echo "2. 'git merge (release-x.x.x || hotfix-x.x.x) --no-ff --log'"
+	echo "3. 'release-it'"
+	echo "4. 'git checkout development'"
+	echo "5. 'git merge (release-x.x.x || hotfix-x.x.x) --no-ff --log'"
+	echo "6. 'git branch -d (release-x.x.x || hotfix-x.x.x)'"
 
 test-coverage-report:
 	echo "Generating coverage report, please stand by"
