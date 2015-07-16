@@ -1,6 +1,6 @@
 # Mortgage Calculator
 
-[![Build Status](https://travis-ci.org/cristobal-io/mortgage-calculator.svg)](https://travis-ci.org/cristobal-io/mortgage-calculator)[![Coveralls branch](https://img.shields.io/coveralls/jekyll/jekyll/master.svg)]()
+[![Build Status](https://travis-ci.org/cristobal-io/mortgage-calculator.svg)](https://travis-ci.org/cristobal-io/mortgage-calculator) [![Coverage Status](https://coveralls.io/repos/cristobal-io/mortgage-calculator/badge.svg?branch=master&service=github)](https://coveralls.io/github/cristobal-io/mortgage-calculator?branch=master)
 
 This is a node module that allows you to calculate the maximum mortgage that you can afford based on your salary and the initial Deposit you will make.
 
