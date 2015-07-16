@@ -1,5 +1,7 @@
 # Mortgage Calculator
 
+[![Build Status](https://travis-ci.org/cristobal-io/mortgage-calculator.svg)](https://travis-ci.org/cristobal-io/mortgage-calculator)
+
 This is a node module that allows you to calculate the maximum mortgage that you can afford based on your salary and the initial Deposit you will make.
 
 It is based on the assumption that no more than 36% of your salary before taxes should be designated to the mortgage to avoid financial problems.
