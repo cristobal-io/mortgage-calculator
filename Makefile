@@ -6,6 +6,9 @@ LINT_DIR = $(wildcard *.js test/*.js lib/*.js test/**/*.json spikes/*)
 setup:
 	npm install
 
+# the default will run lint jscs and test
+default: ci
+
 path:
 	echo $$PATH
 
@@ -50,4 +53,4 @@ test-coverage-report:
 	nyc mocha && nyc report --reporter=html
 
 
-.PHONY: test
+.PHONY: test ci
