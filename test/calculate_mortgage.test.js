@@ -1,4 +1,4 @@
-var isBrowser = !(typeof module !== 'undefined' && module.exports);
+var isBrowser = !(typeof module !== "undefined" && module.exports);
 if (!isBrowser) {
   // non-browser code
 
