@@ -4,7 +4,8 @@
   "description": "package for basic calculation mortgage",
   "main": "lib/index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "mortgage",
