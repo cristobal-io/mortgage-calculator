@@ -17,7 +17,7 @@ test: setup lint style
 	echo "Test started"
 	mocha test/
 
-
+# For coveralls integration on Travis-ci
 test-coveralls:
 	test -d node_modules/nyc/ || npm install nyc
 	nyc mocha && nyc report --reporter=text-lcov | coveralls
