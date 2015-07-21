@@ -19,11 +19,8 @@ test: setup lint style
 
 
 test-coveralls:
-	./node_modules/.bin/jscoverage lib lib-cov
-	./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
-	# @NODE_ENV=test ./node_modules/.bin/istanbul cover \
-	# ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
-	# 	cat ./coverage/lcov.info | ./bin/coveralls.js --verbose
+	test -d node_modules/nyc/ || npm install nyc
+	nyc mocha && nyc report --reporter=text-lcov | coveralls
 
 # Dev mode for continuous testing
 dev:
