@@ -31,9 +31,11 @@
     "lodash": "3.9.3"
   },
   "devDependencies": {
+    "coveralls": "^2.11.3",
     "expect.js": "0.3.1",
     "jscs": "1.13.1",
     "jshint": "2.8.0",
-    "mocha": "2.2.5"
+    "mocha": "2.2.5",
+    "nyc": "^3.0.0"
   }
 }
