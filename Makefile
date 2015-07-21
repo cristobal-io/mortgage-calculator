@@ -57,5 +57,11 @@ test-coverage-report:
 	test -d node_modules/nyc/ || npm install nyc
 	nyc mocha && nyc report --reporter=html
 
+clean-nyc:
+	test -d node_modules/nyc/ && rm -r node_modules/nyc* || echo
+	test -d coverage/ && rm -r coverage* || echo
+	test -d .nyc_output/ && rm -r .nyc_output* || echo
+	echo "all nyc files removed"
+
 
 .PHONY: test ci
