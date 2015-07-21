@@ -17,6 +17,11 @@ test: setup lint style
 	echo "Test started"
 	mocha test/
 
+
+test-coveralls:
+	test -d node_modules/nyc/ || npm install nyc
+	nyc mocha && nyc report --reporter=text-lcov | coveralls
+
 # Dev mode for continuous testing
 dev:
 	mocha --watch test
