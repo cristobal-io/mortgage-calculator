@@ -28,8 +28,7 @@
     "node": ">= 0.10.x"
   },
   "dependencies": {
-    "lodash": "3.9.3",
-    "mocha-lcov-reporter": "0.0.2"
+    "lodash": "3.9.3"
   },
   "devDependencies": {
     "browserify": "^11.0.0",
