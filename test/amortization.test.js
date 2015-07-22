@@ -1,6 +1,9 @@
-var expect = require("expect.js"),
-  fixtures = require("./fixtures/amortization.json"),
-  getAmortization = require("../lib/amortization.js");
+if (typeof require !== "undefined") {
+  var expect = require("expect.js"),
+    fixtures = require("./fixtures/amortization.json"),
+    getAmortization = require("../lib/amortization.js");
+}
+
 
 describe("when using the getAmortization function, it:", function () {
 

@@ -1,6 +1,12 @@
-var expect = require("expect.js"),
-  fixtures = require("./fixtures/calculate_morgage.json"),
-  calculateMortgage = require("../lib/calculate_mortgage.js");
+if (typeof require !== "undefined") {
+  var expect = require("expect.js"),
+    fixtures = require("./fixtures/calculate_morgage.json"),
+    calculateMortgage = require("../lib/calculate_mortgage.js");
+} else {
+  var expect = window.expect;
+  var calculateMortgage = window.calculateMortgage;
+}
+
 
 describe("when using the calculateMortgage function, it:", function () {
 

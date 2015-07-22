@@ -1,10 +1,10 @@
+if (typeof require !== "undefined") {
+  var expect = require("expect.js"),
+    fixtures = require("./fixtures/format_money.json"),
+    _ = require("lodash"),
+    formatMoney = require("../lib/format_money.js");
+}
 /*exported _, defaultOptions*/
-
-var expect = require("expect.js"),
-  fixtures = require("./fixtures/format_money.json"),
-  _ = require("lodash"),
-
-  formatMoney = require("../lib/format_money.js");
 
 describe("When passing different values than defaults it:", function () {
 
