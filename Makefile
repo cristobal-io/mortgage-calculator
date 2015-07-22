@@ -12,6 +12,11 @@ default: ci
 path:
 	echo $$PATH
 
+# generates the test bundle file for mocha test.html
+test-bundle:
+	browserify test/*.js > test_bundle.js
+	open test.html
+
 # run test with dependencies lint and jscs
 test: setup lint style
 	echo "Test started"

@@ -13,6 +13,7 @@
     "allowRegex": true
   },
   "disallowSpacesInAnonymousFunctionExpression": null,
+  "excludeFiles": ["lib/browserify*", "test_bundle.js"],
   "requireSpaceAfterKeywords": [
     "if",
     "else",

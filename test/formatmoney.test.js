@@ -1,16 +1,17 @@
 /*exported _, defaultOptions*/
 // Blanket.js test coverage setup
 
-if (
-  process.argv.indexOf("mocha-spec-cov") !== -1 ||
-  process.argv.indexOf("html-cov") !== -1
-) {
-  // Instrument only when using a coverage reporter
-  require("blanket")({
-    /* options are passed as an argument object to the require statement */
-    pattern: /\/js\//
-  });
-}
+// if (
+//   process.argv.indexOf("mocha-spec-cov") !== -1 ||
+//   process.argv.indexOf("html-cov") !== -1
+// ) {
+//   // Instrument only when using a coverage reporter
+//   require("blanket")({
+//     /* options are passed as an argument object to the require statement */
+//     pattern: /\/js\//
+//   });
+// }
+
 
 var expect = require("expect.js"),
   fixtures = require("./fixtures/format_money.json"),
