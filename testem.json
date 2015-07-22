@@ -1,0 +1,11 @@
+{
+  "framework": "mocha",
+  "launchers": {
+    "Mocha": {
+      "command": "mocha test"
+    }
+  },
+  "src_files": [
+    "test_bundle.js"
+  ]
+}
