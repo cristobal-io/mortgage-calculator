@@ -1,10 +1,6 @@
-var isBrowser = !(typeof module !== "undefined" && module.exports);
-if (!isBrowser) {
-  // non-browser code
-  var expect = require("expect.js"),
-    fixtures = require("./fixtures/amortization.json"),
-    getAmortization = require("../lib/amortization.js");
-}
+var expect = require("expect.js"),
+  fixtures = require("./fixtures/amortization.json"),
+  getAmortization = require("../lib/amortization.js");
 
 describe("when using the getAmortization function, it:", function () {
 
