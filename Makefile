@@ -15,8 +15,9 @@ path:
 # generates the test bundle file for mocha test.html
 test-bundle:
 	browserify test/*.js > test_bundle.js
+	echo "test_bundle.js file generated."
 
-test-html: test-bundle
+test-browser: test-bundle
 	open test.html
 
 testem: test-bundle
@@ -67,11 +68,11 @@ test-coverage-report:
 	test -d node_modules/nyc/ || npm install nyc
 	nyc mocha && nyc report --reporter=html
 
-clean-nyc:
-	test -d node_modules/nyc/ && rm -r node_modules/nyc* || echo
-	test -d coverage/ && rm -r coverage* || echo
-	test -d .nyc_output/ && rm -r .nyc_output* || echo
-	echo "all nyc files removed"
-
+clean:
+	test -d node_modules/nyc/ && rm -r node_modules/nyc* && echo "nyc module removed" || echo "no nyc module found"
+	test -d coverage/ && rm -r coverage* && echo "coverage folder removed" || echo "no coverage folder found"
+	test -d .nyc_output/ && rm -r .nyc_output* && echo "nyc output files removed" || echo "no nyc output files found"
+	test -f test_bundle.js && rm test_bundle.js && echo "test_bundle.js file removed" || echo "no test_bundle file found"
+	echo "finished."
 
 .PHONY: test ci
