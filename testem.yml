@@ -9,4 +9,4 @@ launchers:
   Node:
     command: mocha test
 src_files:
-- test_bundle.js
+- test/*.test.js
