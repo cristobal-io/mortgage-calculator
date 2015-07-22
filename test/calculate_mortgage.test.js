@@ -1,11 +1,6 @@
-var isBrowser = !(typeof module !== "undefined" && module.exports);
-if (!isBrowser) {
-  // non-browser code
-
-  var expect = require("expect.js"),
-    fixtures = require("./fixtures/calculate_morgage.json"),
-    calculateMortgage = require("../lib/calculate_mortgage.js");
-}
+var expect = require("expect.js"),
+  fixtures = require("./fixtures/calculate_morgage.json"),
+  calculateMortgage = require("../lib/calculate_mortgage.js");
 
 describe("when using the calculateMortgage function, it:", function () {
 
