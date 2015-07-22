@@ -15,7 +15,12 @@ path:
 # generates the test bundle file for mocha test.html
 test-bundle:
 	browserify test/*.js > test_bundle.js
+
+test-html: test-bundle
 	open test.html
+
+testem: test-bundle
+	testem
 
 # run test with dependencies lint and jscs
 test: setup lint style
