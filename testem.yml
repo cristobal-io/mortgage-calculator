@@ -1,0 +1,9 @@
+framework: mocha
+launch_in_dev:
+- Chrome
+- Safari
+- Mocha
+- Opera
+- Firefox
+src_files:
+- test_bundle.js
