@@ -17,7 +17,7 @@ test-bundle:
 	browserify test/*.js > test_bundle.js
 	open test.html
 
-testem:
+testem: test-bundle
 	testem
 
 # run test with dependencies lint and jscs
