@@ -4,6 +4,7 @@ launch_in_dev:
 - Safari
 - Opera
 - Firefox
+- Node
 launchers:
   Node:
     command: mocha test
