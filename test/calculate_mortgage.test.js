@@ -18,8 +18,8 @@ describe("when using the calculateMortgage function, it:", function () {
     })).to.eql({
       maxMonthlyPayment: 432,
       monthlyIncome: 2000,
-      mortgageTotal: 77894.31502618745,
-      totalPriceHouse: 97894.31502618745
+      mortgageTotal: 77894.3150262,
+      totalPriceHouse: 97894.3150262
     });
   });
 
@@ -33,8 +33,8 @@ describe("when using the calculateMortgage function, it:", function () {
     })).to.eql({
       maxMonthlyPayment: 432,
       monthlyIncome: 2000,
-      mortgageTotal: 51579.523455058195,
-      totalPriceHouse: 71579.523455058195
+      mortgageTotal: 51579.5234551,
+      totalPriceHouse: 71579.5234551
     });
   });
 
@@ -48,8 +48,8 @@ describe("when using the calculateMortgage function, it:", function () {
     })).to.eql({
       maxMonthlyPayment: 0.36,
       monthlyIncome: 1,
-      mortgageTotal: 42.982936212548495,
-      totalPriceHouse: 42.982936212548495
+      mortgageTotal: 42.9829362,
+      totalPriceHouse: 42.9829362
     });
   });
 
