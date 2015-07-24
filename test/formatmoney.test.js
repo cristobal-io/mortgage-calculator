@@ -1,10 +1,14 @@
+/*exported _, defaultOptions*/
+/*global $*/
+
 if (typeof require !== "undefined") {
   var expect = require("expect.js"),
-    fixtures = require("./fixtures/format_money.json"),
+    formatFixtures = require("./fixtures/format_money.json"),
     _ = require("lodash"),
     formatMoney = require("../lib/format_money.js");
+} else {
+  var formatFixtures = $.getJSON("./fixtures/format_money.json");
 }
-/*exported _, defaultOptions*/
 
 describe("When passing different values than defaults it:", function () {
 
@@ -66,9 +70,9 @@ describe("when using the formatMoney function, it:", function () {
 
 describe("When using the fixtures it:", function () {
 
-  for (var i = 0; i < fixtures.length; i += 1) {
-    it("should test " + fixtures[i].explanation +
-      fixtures[i].output, checkFixtures(fixtures[i]));
+  for (var i = 0; i < formatFixtures.length; i += 1) {
+    it("should test " + formatFixtures[i].explanation +
+      formatFixtures[i].output, checkFixtures(formatFixtures[i]));
   }
 });
 
