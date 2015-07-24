@@ -20,7 +20,7 @@ test-bundle:
 test-browser: test-bundle
 	open test.html
 
-testem: test-bundle
+testem:
 	testem
 
 # run test with dependencies lint and jscs

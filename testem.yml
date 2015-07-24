@@ -5,6 +5,7 @@ launch_in_dev:
 - Opera
 - Firefox
 - Node
+- PhantomJS
 test_page: test/test.html
 launchers:
   Node:

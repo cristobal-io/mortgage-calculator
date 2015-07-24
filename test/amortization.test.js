@@ -7,7 +7,6 @@ if (typeof require !== "undefined") {
   request.open("GET", "fixtures/amortization.json", false);
   request.send(null);
   var amortizationFixtures = JSON.parse(request.responseText);
-  console.log(amortizationFixtures);
 }
 
 
