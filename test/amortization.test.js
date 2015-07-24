@@ -1,6 +1,15 @@
-var expect = require("expect.js"),
-  fixtures = require("./fixtures/amortization.json"),
-  getAmortization = require("../lib/amortization.js");
+if (typeof require !== "undefined") {
+  var expect = require("expect.js"),
+    amortizationFixtures = require("./fixtures/amortization.json"),
+    getAmortization = require("../lib/amortization.js");
+} else {
+  var request = new XMLHttpRequest();
+  request.open("GET", "fixtures/amortization.json", false);
+  request.send(null);
+  var amortizationFixtures = JSON.parse(request.responseText);
+  console.log(amortizationFixtures);
+}
+
 
 describe("when using the getAmortization function, it:", function () {
 
@@ -8,9 +17,10 @@ describe("when using the getAmortization function, it:", function () {
     expect(getAmortization).to.be.a("function");
   });
 
-  for (var i = 0; i < fixtures.length; i += 1) {
+  for (var i = 0; i < amortizationFixtures.length; i += 1) {
     it("should pass test nº " +
-      fixtures[i].explanation, checkFixtures(fixtures[i]));
+      amortizationFixtures[i].explanation,
+      checkFixtures(amortizationFixtures[i]));
   }
 });
 

@@ -1,6 +1,13 @@
-var expect = require("expect.js"),
-  fixtures = require("./fixtures/calculate_morgage.json"),
-  calculateMortgage = require("../lib/calculate_mortgage.js");
+if (typeof require !== "undefined") {
+  var expect = require("expect.js"),
+    mortgageFixtures = require("./fixtures/calculate_morgage.json"),
+    calculateMortgage = require("../lib/calculate_mortgage.js");
+} else {
+  var request = new XMLHttpRequest();
+  request.open("GET", "fixtures/calculate_morgage.json", false);
+  request.send(null);
+  var mortgageFixtures = JSON.parse(request.responseText);
+}
 
 describe("when using the calculateMortgage function, it:", function () {
 
@@ -53,9 +60,9 @@ describe("when using the calculateMortgage function, it:", function () {
     });
   });
 
-  for (var i = 0; i < fixtures.length; i += 1) {
+  for (var i = 0; i < mortgageFixtures.length; i += 1) {
     it("should pass test nº " +
-      fixtures[i].explanation, checkFixtures(fixtures[i]));
+      mortgageFixtures[i].explanation, checkFixtures(mortgageFixtures[i]));
   }
 
 });

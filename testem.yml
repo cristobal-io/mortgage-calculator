@@ -5,8 +5,9 @@ launch_in_dev:
 - Opera
 - Firefox
 - Node
+test_page: test/test.html
 launchers:
   Node:
     command: mocha test
 src_files:
-- test_bundle.js
+- test/*.test.js
