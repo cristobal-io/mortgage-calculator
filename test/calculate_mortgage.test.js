@@ -1,31 +1,12 @@
-/*
-global $
- */
 if (typeof require !== "undefined") {
   var expect = require("expect.js"),
     mortgageFixtures = require("./fixtures/calculate_morgage.json"),
     calculateMortgage = require("../lib/calculate_mortgage.js");
 } else {
-  // var expect = window.expect;
-  // var calculateMortgage = window.calculateMortgage;
-  var mortgageFixtures;
-  loadJSON(function (response) {
-    // Parse JSON string into object
-    mortgageFixtures = JSON.parse(response);
-  });
-  console.log(mortgageFixtures);
-}
-
-function loadJSON(callback) {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open("GET", "fixtures/calculate_morgage.json", false);
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
+  var request = new XMLHttpRequest();
+  request.open("GET", "fixtures/calculate_morgage.json", false);
+  request.send(null);
+  var mortgageFixtures = JSON.parse(request.responseText);
 }
 
 describe("when using the calculateMortgage function, it:", function () {

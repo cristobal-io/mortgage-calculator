@@ -1,10 +1,10 @@
 framework: mocha
 launch_in_dev:
 - Chrome
-# - Safari
-# - Opera
-# - Firefox
-# - Node
+- Safari
+- Opera
+- Firefox
+- Node
 test_page: test/test.html
 launchers:
   Node:

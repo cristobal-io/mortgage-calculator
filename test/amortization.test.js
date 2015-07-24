@@ -1,28 +1,15 @@
-/*exported load*/
 if (typeof require !== "undefined") {
   var expect = require("expect.js"),
     amortizationFixtures = require("./fixtures/amortization.json"),
     getAmortization = require("../lib/amortization.js");
 } else {
-  var amortizationFixtures;
-  loadJSON(function (response) {
-    // Parse JSON string into object
-    amortizationFixtures = JSON.parse(response);
-  });
+  var request = new XMLHttpRequest();
+  request.open("GET", "fixtures/amortization.json", false);
+  request.send(null);
+  var amortizationFixtures = JSON.parse(request.responseText);
   console.log(amortizationFixtures);
 }
 
-function loadJSON(callback) {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open("GET", "./fixtures/amortization.json", false);
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
-}
 
 describe("when using the getAmortization function, it:", function () {
 
