@@ -7,8 +7,27 @@ if (typeof require !== "undefined") {
     _ = require("lodash"),
     formatMoney = require("../lib/format_money.js");
 } else {
-  var formatFixtures = $.getJSON("./fixtures/format_money.json");
+  // var formatFixtures = $.getJSON("./fixtures/format_money.json");
+  var formatFixtures;
+  loadJSON(function (response) {
+    // Parse JSON string into object
+    formatFixtures = JSON.parse(response);
+  });
+  console.log(formatFixtures);
 }
+
+function loadJSON(callback) {
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open("GET", "fixtures/format_money.json", false);
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      callback(xobj.responseText);
+    }
+  };
+  xobj.send(null);
+}
+
 
 describe("When passing different values than defaults it:", function () {
 
