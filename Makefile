@@ -13,12 +13,15 @@ path:
 	echo $$PATH
 
 # generates the test bundle file for mocha test.html
-test-bundle:
-	browserify test/*.js > test_bundle.js
+test/%:
+	mkdir -p test/bundle
+
+test/bundle/test_bundle.js: test/%
+	browserify test/*.js > $@
 	echo "test_bundle.js file generated."
 
-test-browser: test-bundle
-	open test.html
+test-browser: test/bundle/test_bundle.js
+	open test/bundle/test.html
 
 testem:
 	testem
