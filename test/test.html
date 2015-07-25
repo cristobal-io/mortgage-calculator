@@ -1,4 +1,6 @@
 <html>
+<!-- Previously to open it, run "make test-browser" -->
+<!-- This is only for direct open on browser. -->
 
 <head>
     <meta charset="utf-8">
@@ -8,23 +10,32 @@
 
 <body>
     <div id="mocha"></div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="../node_modules/expect.js/index.js"></script>
     <script src="../node_modules/mocha/mocha.js"></script>
-    <script src="/testem.js"></script>
     <script src="../node_modules/lodash/index.js"></script>
     <script>
     mocha.setup({
-        ui: 'bdd',
+        ui: "bdd",
         ignoreLeaks: true
     });
     </script>
-    <script src="../lib/amortization.js"></script>
-    <script src="../lib/format_money.js"></script>
-    <script src="../lib/calculate_mortgage.js"></script>
-    <script src="calculate_mortgage.test.js"></script>
-    <script src="amortization.test.js"></script>
-    <script src="formatmoney.test.js"></script>
+    <script>
+    if (location.href.indexOf("://localhost:7357") != -1) {
+        // testem goes between test runner setup and the tests
+        document.write("<script src=\"/testem.js\">" + "<\/" + "script>");
+        // add the library for tests.
+        document.write("<script src=\"../lib/amortization.js\">" + "<\/" + "script>");
+        document.write("<script src=\"../lib/format_money.js\">" + "<\/" + "script>");
+        document.write("<script src=\"../lib/calculate_mortgage.js\">" + "<\/" + "script>");
+        // add the tests.
+        document.write("<script src=\"calculate_mortgage.test.js\">" + "<\/" + "script>");
+        document.write("<script src=\"amortization.test.js\">" + "<\/" + "script>");
+        document.write("<script src=\"formatmoney.test.js\">" + "<\/" + "script>");
+
+    } else {
+        document.write("<script src=\"bundle/test_bundle.js\">" + "<\/" + "script>");
+    }
+    </script>
     <script>
     mocha.run();
     </script>
