@@ -21,7 +21,7 @@ test/bundle/test_bundle.js: test/%
 	echo "test_bundle.js file generated."
 
 test-browser: test/bundle/test_bundle.js
-	open test/bundle/test.html
+	open test/test.html
 
 testem:
 	testem
@@ -76,7 +76,7 @@ clean:
 	test -d node_modules/nyc/ && rm -r node_modules/nyc* && echo "nyc module removed" || echo "no nyc module found"
 	test -d coverage/ && rm -r coverage* && echo "coverage folder removed" || echo "no coverage folder found"
 	test -d .nyc_output/ && rm -r .nyc_output* && echo "nyc output files removed" || echo "no nyc output files found"
-	test -f test_bundle.js && rm test_bundle.js && echo "test_bundle.js file removed" || echo "no test_bundle file found"
+	test -d test/bundle/ && rm -r test/bundle && echo "test_bundle.js file removed" || echo "no test_bundle file found"
 	echo "finished."
 
 .PHONY: test ci
