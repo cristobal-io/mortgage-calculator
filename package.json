@@ -28,6 +28,7 @@
     "node": ">= 0.10.x"
   },
   "dependencies": {
+    "decimal.js": "^4.0.2",
     "lodash": "3.9.3"
   },
   "devDependencies": {
