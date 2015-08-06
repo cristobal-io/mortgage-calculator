@@ -2,6 +2,7 @@ SHELL = /bin/bash
 MAKEFLAGS += --no-print-directory --silent
 export PATH := ./node_modules/.bin:$(PATH):./bin
 LINT_DIR = $(wildcard *.js test/*.js lib/*.js test/**/*.json spikes/*)
+BROWSERIFY_DEPS = $(wildcard lib/*.js test/*.test.js node_modules/*/package.json )
 
 setup:
 	npm install
@@ -13,10 +14,10 @@ path:
 	echo $$PATH
 
 # generates the test bundle file for mocha test.html
-test/%:
+test/bundle:
 	mkdir -p test/bundle
 
-test/bundle/test_bundle.js: test/%
+test/bundle/test_bundle.js: test/bundle $(BROWSERIFY_DEPS)
 	browserify test/*.js > $@
 	echo "test_bundle.js file generated."
 
