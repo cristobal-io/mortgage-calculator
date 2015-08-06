@@ -1,6 +1,7 @@
 SHELL = /bin/bash
 MAKEFLAGS += --no-print-directory --silent
 export PATH := ./node_modules/.bin:$(PATH):./bin
+DIST_DIR= $(wildcard lib/*.js)
 LINT_DIR = $(wildcard *.js test/*.js lib/*.js test/**/*.json spikes/*)
 BROWSERIFY_DEPS = $(wildcard lib/*.js test/*.test.js node_modules/*/package.json )
 
@@ -12,6 +13,22 @@ default: ci
 
 path:
 	echo $$PATH
+
+# generate distribution file with browserify and uglifyjs
+dist: dist/mortgage-calculator.min.js
+
+dist/mortgage-calculator.browserify.js:
+	mkdir -p dist
+	echo "generating browserify file from lib/ ..."
+	browserify $(DIST_DIR) > $@
+	echo "browserify lib file generated"
+
+dist/mortgage-calculator.min.js: dist/mortgage-calculator.browserify.js
+	echo "generating min file with uglify..."
+	uglifyjs dist/mortgage-calculator.browserify.js > $@
+	echo " uglify file generated."
+	echo "deleting browserify generated file.."
+	rm -r dist/mortgage-calculator.browserify.js
 
 # generates the test bundle file for mocha test.html
 test/bundle:
@@ -80,4 +97,4 @@ clean:
 	test -d test/bundle/ && rm -r test/bundle && echo "test_bundle.js file removed" || echo "no test_bundle file found"
 	echo "finished."
 
-.PHONY: test ci
+.PHONY: test ci dist
