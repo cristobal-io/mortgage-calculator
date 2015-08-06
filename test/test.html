@@ -1,0 +1,44 @@
+<html>
+<!-- If you want to run it direclty on browser, run "make test-browser" -->
+<!-- otherwise you won't have the test available. -->
+<!-- Better use it with testem. -->
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link href="../node_modules/mocha/mocha.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script src="../node_modules/expect.js/index.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/lodash/index.js"></script>
+    <script>
+    mocha.setup({
+        ui: "bdd",
+        ignoreLeaks: true
+    });
+    </script>
+    <script>
+    if (location.href.indexOf("://localhost:7357") !== -1) {
+        // testem goes between test runner setup and the tests
+        document.write("<script src=\"/testem.js\">" + "<\/" + "script>");
+        // add the library for tests.
+        document.write("<script src=\"../lib/amortization.js\">" + "<\/" + "script>");
+        document.write("<script src=\"../lib/format_money.js\">" + "<\/" + "script>");
+        document.write("<script src=\"../lib/calculate_mortgage.js\">" + "<\/" + "script>");
+        // add the tests.
+        document.write("<script src=\"calculate_mortgage.test.js\">" + "<\/" + "script>");
+        document.write("<script src=\"amortization.test.js\">" + "<\/" + "script>");
+        document.write("<script src=\"formatmoney.test.js\">" + "<\/" + "script>");
+
+    } else {
+        document.write("<script src=\"bundle/test_bundle.js\">" + "<\/" + "script>");
+    }
+    </script>
+    <script>
+    mocha.run();
+    </script>
+</body>
+
+</html>

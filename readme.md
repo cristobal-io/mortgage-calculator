@@ -65,8 +65,8 @@ mortgageCalculator.getMaxMortgage(options);
 - `age`: Age of the youngest person taking the loan.
 - `settings`: (optional)
     + `maxAge`: Maximum age restricts the length of the term. Default: `65`
-    + `personalTaxRate`: Percent of the monthly income that is paid as taxes. Default: `42`.
     + `riskRate`: Maximum percent of risk. Default:`36`
+    + (`personalTaxRate`: Percent of the monthly income that is paid as taxes. Default: `42`.) -> future version.
 
 #### mortgageCalculator.formatMoney
 
@@ -128,6 +128,12 @@ For test use command:
 
 ```bash
 make test
+```
+
+For test on Browsers use [testem](https://github.com/airportyh/testem):
+
+```bash
+make testem
 ```
 
 ---
