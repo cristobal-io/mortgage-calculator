@@ -20,7 +20,7 @@ dist: dist/mortgage-calculator.min.js
 dist/mortgage-calculator.browserify.js:
 	mkdir -p dist
 	echo "generating browserify file from lib/ ..."
-	browserify $(DIST_DIR) > $@
+	browserify $(DIST_DIR) --standalone mortgageCalculator > $@
 	echo "browserify lib file generated"
 
 dist/mortgage-calculator.min.js: dist/mortgage-calculator.browserify.js
