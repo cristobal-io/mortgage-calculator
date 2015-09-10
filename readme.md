@@ -28,6 +28,8 @@ The maximum allowed by law is a 43% before taxes, however many articles suggest 
 
     npm install mortgage-calculator
 
+or [download](https://raw.githubusercontent.com/cristobal-io/mortgage-calculator/master/dist/mortgage-calculator.min.js) the minified version
+
 ---
 
 ### Usage.
@@ -40,7 +42,7 @@ The maximum allowed by law is a 43% before taxes, however many articles suggest 
 
 `window.mortgageCalculator` will be exposed after including the script.
 
-    <script src="dist/morgage_calculator.js"></script>
+    <script src="morgage_calculator.min.js"></script>
 
 ---
 
@@ -51,7 +53,7 @@ The maximum allowed by law is a 43% before taxes, however many articles suggest 
 This method will tell you the price of the house that you can afford.
 
 ```
-mortgageCalculator.getMaxMortgage(options);
+mortgageCalculator.calculateMortgage(options);
 ```
 
 ##### options
