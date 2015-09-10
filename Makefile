@@ -27,8 +27,7 @@ dist/mortgage-calculator.min.js: dist/mortgage-calculator.browserify.js
 	echo "generating min file with uglify..."
 	uglifyjs dist/mortgage-calculator.browserify.js > $@
 	echo " uglify file generated."
-	echo "deleting browserify generated file.."
-	rm -r dist/mortgage-calculator.browserify.js
+
 
 # generates the test bundle file for mocha test.html
 test/bundle:
