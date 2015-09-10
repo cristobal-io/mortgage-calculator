@@ -1,0 +1,14 @@
+framework: mocha
+launch_in_dev:
+- Chrome
+- Safari
+- Opera
+- Firefox
+- Node
+- PhantomJS
+test_page: test/test.html
+launchers:
+  Node:
+    command: mocha test
+src_files:
+- test/*.test.js
