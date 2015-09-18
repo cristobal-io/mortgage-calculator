@@ -12,7 +12,7 @@ function getAmortization(capital, pay, periods, interest) {
       return;
     } else {
       updateTable(pay, amortizationCapital);
-      updateAmortizationTable(capital - pay, periods - 1);
+      updateAmortizationTable(capital - amortizationCapital, periods - 1);
     }
 
     function updateTable(pay, amortizationCapital) {
@@ -20,7 +20,7 @@ function getAmortization(capital, pay, periods, interest) {
         period: (amortizationTable.length + 1),
         amortizationInterest: amortizationInterest,
         amortizationCapital: amortizationCapital,
-        remainingCapital: capital - pay
+        remainingCapital: capital - amortizationCapital
       });
     }
   };

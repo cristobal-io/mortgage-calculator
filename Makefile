@@ -17,7 +17,7 @@ path:
 # generate distribution file with browserify and uglifyjs
 dist: dist/mortgage-calculator.min.js
 
-dist/mortgage-calculator.browserify.js:
+dist/mortgage-calculator.browserify.js: clean
 	mkdir -p dist
 	echo "generating browserify file from lib/ ..."
 	browserify $(DIST_DIR) --standalone mortgageCalculator > $@
@@ -70,10 +70,11 @@ style:
 
 # Continuous Integration Test Runner
 ci: lint style test
-	echo "1. Make sure 'git status' is clean."
-	echo "2. 'git checkout -b (release-x.x.x || hotfix-x.x.x) master"
-	echo "3. 'git merge development --no-ff --log'"
-	echo "4. 'Make release'"
+	echo "1. 'make dist'"
+	echo "2. Make sure 'git status' is clean."
+	echo "3. 'git checkout -b (release-x.x.x || hotfix-x.x.x) master"
+	echo "4. 'git merge development --no-ff --log'"
+	echo "5. 'Make release'"
 
 release: lint style test
 	echo "1. 'git checkout master'"
@@ -94,6 +95,7 @@ clean:
 	test -d coverage/ && rm -r coverage* && echo "coverage folder removed" || echo "no coverage folder found"
 	test -d .nyc_output/ && rm -r .nyc_output* && echo "nyc output files removed" || echo "no nyc output files found"
 	test -d test/bundle/ && rm -r test/bundle && echo "test_bundle.js file removed" || echo "no test_bundle file found"
+	test -d dist/ && rm -r dist/ && echo "dist folder removed" || echo "no dist folder found"
 	echo "finished."
 
 .PHONY: test ci dist
