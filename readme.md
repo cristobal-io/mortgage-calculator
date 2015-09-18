@@ -42,7 +42,7 @@ or [download](https://raw.githubusercontent.com/cristobal-io/mortgage-calculator
 
 `window.mortgageCalculator` will be exposed after including the script.
 
-    <script src="morgage_calculator.min.js"></script>
+    <script src="morgage-calculator.min.js"></script>
 
 ---
 

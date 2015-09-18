@@ -1,6 +1,6 @@
 {
   "name": "mortgage-calculator",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "package for basic calculation mortgage",
   "main": "lib/index.js",
   "scripts": {
