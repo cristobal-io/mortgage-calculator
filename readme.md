@@ -70,6 +70,26 @@ mortgageCalculator.calculateMortgage(options);
     + `riskRate`: Maximum percent of risk. Default:`36`
     + (`personalTaxRate`: Percent of the monthly income that is paid as taxes. Default: `42`.) -> future version.
 
+##### Example:
+
+```javascript
+// when calling the function
+mortgageCalculator.calculateMortgage({
+      "initialDeposit": 20000,
+      "monthlyIncome": 2000,
+      "interest": 3,
+      "term": 20,
+      "monthlyExpenses": 800
+    })
+// Will return an object like this one.
+Object {
+  maxMonthlyPayment: 432,
+  monthlyIncome: 2000,
+  totalPriceHouse: "97894.3150262",
+  mortgageTotal: "77894.3150262"
+}
+```
+
 #### mortgageCalculator.formatMoney
 
 This method will format an integer to the desired localized format
@@ -88,6 +108,17 @@ This will be the value you want to format.
 - `places`: Default `2`
 - `thousand`: Default `","`
 - `decimal`: Default `"."`
+
+##### Example
+
+```javascript
+// Calling the function with this argument
+mortgageCalculator.formatMoney(123456789.1234567);
+
+// returns the default format 
+"$123,456,789.12"
+
+```
 
 #### mortgageCalculator.amortization
 
@@ -115,6 +146,48 @@ Annual interest not expressed in %
 
     example:
     3% --> 3/100 = 0.03
+
+##### Example
+
+```javascript
+// When calling the function with the following parameters
+mortgageCalculator.amortization(5000, 423.47, 12, 0.03);
+
+// will return the following (abbreviated)
+  {
+  "period": 1,
+  "amortizationInterest": 12.5,
+  "amortizationCapital": 410.97,
+  "remainingCapital": 4589.03
+}, {
+  "period": 2,
+  "amortizationInterest": 11.472574999999999,
+  "amortizationCapital": 411.997425,
+  "remainingCapital": 4177.032574999999
+}, {
+  "period": 3,
+  "amortizationInterest": 10.442581437499998,
+  "amortizationCapital": 413.02741856250003,
+  "remainingCapital": 3764.0051564374994
+}, {
+  "period": 4,
+  "amortizationInterest": 9.410012891093748,
+  "amortizationCapital": 414.0599871089063,
+  "remainingCapital": 3349.9451693285932
+},
+.
+.
+// abbreviated
+.
+.
+{
+  "period": 12,
+  "amortizationInterest": 1.0559892142203449,
+  "amortizationCapital": 422.395685688138,
+  "remainingCapital": 0
+}
+
+```
 
 ---
 
