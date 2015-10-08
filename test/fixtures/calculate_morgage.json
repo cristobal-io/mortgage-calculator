@@ -9,7 +9,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 46949.6559426,
     "mortgageTotal": 46949.6559426
   }
@@ -24,7 +23,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 93394.3150262,
     "mortgageTotal": 77894.3150262
   }
@@ -39,7 +37,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 97994.3150262,
     "mortgageTotal": 77894.3150262
   }
@@ -53,7 +50,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 0,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 0,
     "mortgageTotal": 0
   }
@@ -66,7 +62,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 720,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 129823.8583770,
     "mortgageTotal": 129823.8583770
   }
@@ -83,7 +78,6 @@
   }],
   "output": {
     "maxMonthlyPayment": 720,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 104259.9394490,
     "mortgageTotal": 104259.9394490
   }
