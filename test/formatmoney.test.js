@@ -12,44 +12,45 @@ if (typeof require !== "undefined") {
   var formatFixtures = JSON.parse(request.responseText);
 }
 
-describe("When passing different values than defaults it:", function () {
+describe("Format Money: When passing different values than defaults it:",
+  function () {
 
-  it("should return defaults :$0.90", function () {
-    expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
+    it("should return defaults :$0.90", function () {
+      expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
+    });
+
+    it("should return different from defaults :$0,901", function () {
+      expect(formatMoney.apply(null, [0.90123, {
+        "places": 3,
+        "symbol": "$",
+        "thousand": ".",
+        "decimal": ","
+      }])).to.be("$0,901");
+    });
+
+    it("should return different from defaults :¶0,9012", function () {
+      expect(formatMoney.apply(null, [0.90123, {
+        "places": 4,
+        "symbol": "¶",
+        "thousand": ".",
+        "decimal": ","
+      }])).to.be("¶0,9012");
+    });
+
+    it("should return defaults :$0,90", function () {
+      expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
+    });
+
+    it("should return different from defaults :¶0,90123", function () {
+      expect(formatMoney.apply(null, [0.90123, {
+        "places": 5,
+        "symbol": "¶"
+      }])).to.be("¶0.90123");
+    });
+
   });
 
-  it("should return different from defaults :$0,901", function () {
-    expect(formatMoney.apply(null, [0.90123, {
-      "places": 3,
-      "symbol": "$",
-      "thousand": ".",
-      "decimal": ","
-    }])).to.be("$0,901");
-  });
-
-  it("should return different from defaults :¶0,9012", function () {
-    expect(formatMoney.apply(null, [0.90123, {
-      "places": 4,
-      "symbol": "¶",
-      "thousand": ".",
-      "decimal": ","
-    }])).to.be("¶0,9012");
-  });
-
-  it("should return defaults :$0,90", function () {
-    expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
-  });
-
-  it("should return different from defaults :¶0,90123", function () {
-    expect(formatMoney.apply(null, [0.90123, {
-      "places": 5,
-      "symbol": "¶"
-    }])).to.be("¶0.90123");
-  });
-
-});
-
-describe("when using the formatMoney function, it:", function () {
+describe("Format Money: when using the function, it:", function () {
 
   it("should expose a function", function () {
     expect(formatMoney).to.be.a("function");
@@ -70,7 +71,7 @@ describe("when using the formatMoney function, it:", function () {
   });
 });
 
-describe("When using the fixtures it:", function () {
+describe("Format Money: When using the fixtures it:", function () {
 
   for (var i = 0; i < formatFixtures.length; i += 1) {
     it("should test " + formatFixtures[i].explanation +

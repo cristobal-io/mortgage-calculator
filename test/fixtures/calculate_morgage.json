@@ -9,9 +9,9 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 46949.6559426,
-    "mortgageTotal": 46949.6559426
+    "mortgageTotal": 46949.6559426,
+    "totalInterest": 361.2379167
   }
 }, {
   "explanation": "02: math, with deposit 15500",
@@ -24,9 +24,9 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 93394.3150262,
-    "mortgageTotal": 77894.3150262
+    "mortgageTotal": 77894.3150262,
+    "totalInterest": 1509.0217746
   }
 }, {
   "explanation": "03: math",
@@ -39,9 +39,9 @@
   }],
   "output": {
     "maxMonthlyPayment": 432,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 97994.3150262,
-    "mortgageTotal": 77894.3150262
+    "mortgageTotal": 77894.3150262,
+    "totalInterest": 1509.0217746
   }
 }, {
   "explanation": "04: math",
@@ -53,9 +53,9 @@
   }],
   "output": {
     "maxMonthlyPayment": 0,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 0,
-    "mortgageTotal": 0
+    "mortgageTotal": 0,
+    "totalInterest": 0
   }
 }, {
   "explanation": "05: math",
@@ -66,9 +66,9 @@
   }],
   "output": {
     "maxMonthlyPayment": 720,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 129823.8583770,
-    "mortgageTotal": 129823.8583770
+    "mortgageTotal": 129823.8583770,
+    "totalInterest": 2515.0362910
   }
 }, {
   "explanation": "06: max age 50 and age 35, request term 20,new term 15",
@@ -83,8 +83,8 @@
   }],
   "output": {
     "maxMonthlyPayment": 720,
-    "monthlyIncome": 2000,
     "totalPriceHouse": 104259.9394490,
-    "mortgageTotal": 104259.9394490
+    "mortgageTotal": 104259.9394490,
+    "totalInterest": 1616.0398358
   }
 }]
