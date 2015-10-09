@@ -9,7 +9,7 @@ if (typeof require !== "undefined") {
   var mortgageFixtures = JSON.parse(request.responseText);
 }
 
-describe("when using the calculateMortgage function, it:", function () {
+describe("calculateMortgage: when using the function, it:", function () {
 
   it("should expose a function", function () {
     expect(calculateMortgage).to.be.a("function");
@@ -24,9 +24,9 @@ describe("when using the calculateMortgage function, it:", function () {
       "monthlyExpenses": 800
     })).to.eql({
       maxMonthlyPayment: 432,
-      monthlyIncome: 2000,
       mortgageTotal: 77894.3150262,
-      totalPriceHouse: 97894.3150262
+      totalPriceHouse: 97894.3150262,
+      totalInterest: 1509.0217746
     });
   });
 
@@ -39,9 +39,9 @@ describe("when using the calculateMortgage function, it:", function () {
       "monthlyExpenses": 800
     })).to.eql({
       maxMonthlyPayment: 432,
-      monthlyIncome: 2000,
       mortgageTotal: 51579.5234551,
-      totalPriceHouse: 71579.5234551
+      totalPriceHouse: 71579.5234551,
+      totalInterest: 21.5748494
     });
   });
 
@@ -54,9 +54,9 @@ describe("when using the calculateMortgage function, it:", function () {
       "monthlyExpenses": -1
     })).to.eql({
       maxMonthlyPayment: 0.36,
-      monthlyIncome: 1,
       mortgageTotal: 42.9829362,
-      totalPriceHouse: 42.9829362
+      totalPriceHouse: 42.9829362,
+      totalInterest: 0.0179790
     });
   });
 
@@ -67,7 +67,7 @@ describe("when using the calculateMortgage function, it:", function () {
 
 });
 
-describe("When using calculateMortgage function with different values than" +
+describe("calculateMortgage: When using function with different values than" +
   " defaults it",
   function () {
 

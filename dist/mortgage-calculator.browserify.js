@@ -33,11 +33,15 @@ if (typeof module !== "undefined") {
 }
 
 },{}],2:[function(require,module,exports){
+/*exported totalAmortization*/
 if (typeof require !== "undefined") {
   var defaults = require("lodash/object/defaults");
   var forEach = require("lodash/collection/forEach");
   var compose = require("lodash/function/compose");
 }
+
+var amortization = require("./amortization.js");
+
 var defaultMortgageOptions = {
     initialDeposit: 0,
     age: 18,
@@ -93,13 +97,22 @@ function calculateMortgage(options) {
     findMaxPay(options.monthlyIncome, options.monthlyExpenses),
     mortgageTotal =
     findMortgage(maxMonthlyPayment, (options.interest) / 12, totalPeriods),
-    totalPriceHouse = mortgageTotal + options.initialDeposit;
+    totalPriceHouse = mortgageTotal + options.initialDeposit,
+    totalInterest = 0;
 
+  if (mortgageTotal !== 0) {
+    totalInterest = totalAmortization({
+      mortgageTotal: mortgageTotal,
+      maxMonthlyPayment: maxMonthlyPayment,
+      term: periodsRequested,
+      interest: options.interest / 12
+    });
+  }
   return {
     maxMonthlyPayment: maxMonthlyPayment,
-    monthlyIncome: options.monthlyIncome,
     totalPriceHouse: totalPriceHouse.toFixed(7),
     mortgageTotal: mortgageTotal.toFixed(7),
+    totalInterest: totalInterest.toFixed(7)
   };
 }
 
@@ -112,11 +125,25 @@ function getMaxTerm(age, maxAge, periodsRequested) {
   }
 }
 
+function totalAmortization(argument) {
+  var amortizationResult = amortization(
+    argument.mortgageTotal,
+    argument.maxMonthlyPayment, argument.term, argument.interest / 100);
+
+  var totalInterest = 0;
+
+  function getTotalInterest(element) {
+    totalInterest += element.amortizationInterest;
+  }
+  amortizationResult.forEach(getTotalInterest);
+  return totalInterest;
+}
+
 if (typeof module !== "undefined") {
   module.exports = calculateMortgage;
 }
 
-},{"lodash/collection/forEach":6,"lodash/function/compose":7,"lodash/object/defaults":51}],3:[function(require,module,exports){
+},{"./amortization.js":1,"lodash/collection/forEach":6,"lodash/function/compose":7,"lodash/object/defaults":51}],3:[function(require,module,exports){
 if (typeof require !== "undefined") {
   var defaults = require("lodash/object/defaults");
   var compose = require("lodash/function/compose");

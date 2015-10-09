@@ -10,7 +10,7 @@ if (typeof require !== "undefined") {
 }
 
 
-describe("when using the getAmortization function, it:", function () {
+describe("getAmortization: when using the function, it:", function () {
 
   it("should expose a function", function () {
     expect(getAmortization).to.be.a("function");
