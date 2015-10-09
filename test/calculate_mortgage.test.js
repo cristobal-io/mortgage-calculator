@@ -9,7 +9,7 @@ if (typeof require !== "undefined") {
   var mortgageFixtures = JSON.parse(request.responseText);
 }
 
-describe("when using the calculateMortgage function, it:", function () {
+describe("calculateMortgage: when using the function, it:", function () {
 
   it("should expose a function", function () {
     expect(calculateMortgage).to.be.a("function");
@@ -67,7 +67,7 @@ describe("when using the calculateMortgage function, it:", function () {
 
 });
 
-describe("When using calculateMortgage function with different values than" +
+describe("calculateMortgage: When using function with different values than" +
   " defaults it",
   function () {
 
