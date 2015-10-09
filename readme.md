@@ -84,9 +84,9 @@ mortgageCalculator.calculateMortgage({
 // Will return an object like this one.
 Object {
   maxMonthlyPayment: 432,
-  monthlyIncome: 2000,
-  totalPriceHouse: "97894.3150262",
-  mortgageTotal: "77894.3150262"
+  totalPriceHouse: 97894.3150262,
+  mortgageTotal: 77894.3150262,
+  totalInterest: 1509.0217746
 }
 ```
 
