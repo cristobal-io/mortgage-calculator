@@ -1,0 +1,261 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+  body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/c3.min.css">
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <script src="js/vendor/Chart.js"></script>
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Mortgage  Calculator</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <p class="navbar-btn"><a id="introButton" class="btn btn-default" type="button" data-toggle="collapse" data-target="#intro" aria-expanded="false" aria-controls="intro">
+                Hide Intro
+              </a></p>
+          </li>
+        </ul>
+        <ul class="collapse navbar-collapse navbar-right">
+          <li>
+            <a href="https://github.com/cristobal-io/mortgage-calculator" class="navbar-link  navbar-right">
+              <p class="navbar-text github-icon-light">Github Project</p>
+            </a>
+          </li>
+          <li>
+
+          </li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </nav>
+  <div id="wrap">
+    <div class="container collapse in" id="intro">
+      <h3>This page is an example of usage for the npm package mortgage-calculator</h3>
+      <p>I've created this package to learn how to code JavaScript, the code has been created following the TDD technique</p>
+      <p>With the mortgage-calculator package you can obtain the maximum payment you should be commiting to according to a risk factor, you can obtain the mortgage and the amortization table.</p>
+      <p>To see the details of the project you can go to the <a href="https://github.com/cristobal-io/mortgage-calculator">github page</a></p>
+      <p>You can play with the sliders to update live the results of the mortgage calculations or update the value directly on the input.</p>
+      <p>For this example I have used the standard values of the formula with a risk of 36%</p>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <form class="form-horizontal">
+        <fieldset>
+          <!-- Form Name -->
+          <legend>Controls</legend>
+          <!-- Initial Deposit input-->
+          <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="input-update">Initial Deposit</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input id="initialDeposit_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                  <!-- <div class="input-group-addon">.00</div> -->
+                </div>
+              </div>
+              <div class="slider col-md-7 slider-container" id="initialDeposit" data-begin="500" data-end="20000" data-value="10000"></div>
+            </div>
+          </div>
+          <!-- Monthly Income input-->
+          <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="monthlyIncome_input">Monthly Income</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input id="monthlyIncome_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                  <!-- <div class="input-group-addon">.00</div> -->
+                </div>
+              </div>
+              <div class="slider col-md-7 slider-container" id="monthlyIncome" data-begin="500" data-end="10000" data-value="3000"></div>
+            </div>
+          </div>
+          <!-- Interest Rate input-->
+          <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="interest_input">Interest Rate</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <div class="input-group-addon">%</div>
+                  <input id="interest_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                  <!-- <div class="input-group-addon">.00</div> -->
+                </div>
+                <!-- <span class="help-block">Indicate interest rate in %</span> -->
+              </div>
+              <div class="col-md-7 slider-container slider" id="interest" data-begin="0" data-end="40" data-value="3"></div>
+            </div>
+          </div>
+          <!-- Term or payments input-->
+          <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="term_input">Term</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <!-- <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      Term
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="#">Term</a></li>
+                      <li><a href="#">Payments</a></li>
+                    </ul>
+                  </div> -->
+                  <div class="input-group-addon">Years</div>
+                  <input id="term_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                  <!-- <div class="input-group-addon">.00</div> -->
+                </div>
+                <!-- <span class="help-block">Indicate term rate in %</span> -->
+              </div>
+              <div class="slider col-md-7 slider-container" id="term" data-begin="10" data-end="45" data-value="25"></div>
+            </div>
+          </div>
+          <!-- Monthly Expenses input-->
+          <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="monthlyExpenses_input">Monthly Expenses</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input id="monthlyExpenses_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                  <!-- <div class="input-group-addon">.00</div> -->
+                </div>
+              </div>
+              <div class="slider col-md-7 slider-container" id="monthlyExpenses" data-begin="0" data-end="4000" data-value="800"></div>
+            </div>
+          </div>
+          <!-- Age input-->
+          <!-- <div class="form-horizontal slider-inline form-group">
+            <div class="slider-input">
+              <div class="control-label col-md-2">
+                <label class="control-label" for="age_input">Age</label>
+              </div>
+              <div class="col-md-3">
+                <div class="input-group">
+                  <div class="input-group-addon">Years</div>
+                  <input id="age_input" class="form-control input-md input-update" name="initialDeposit" type="text" placeholder="">
+                </div>
+              </div>
+              <div class="slider col-md-7 slider-container" id="age" data-begin="18" data-end="112" data-value="30"></div>
+            </div>
+          </div> -->
+        </fieldset>
+      </form>
+    </div>
+    <div class="jumbotron clearfix">
+      <div class="clearfix col-md-6 col-md-offset-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Total Interest:</th>
+              <th>Mortgage:</th>
+              <th>House Price:</th>
+              <th>Payment:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span id="totalInterest"></span></td>
+              <td><span id="mortgage"></span></td>
+              <td><span id="totalPriceHouse"></span></td>
+              <td><span id="maxMonthlyPayment"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container col-md-4">
+        <div id="chart"></div>
+        <!-- <canvas id="myChart" width="200" height="200"></canvas> -->
+      </div>
+      <div class="container col-md-8">
+        <div id="barChart"></div>
+      </div>
+    <div class="clearfix"></div>
+    <div id="tableAmortization" class="table-responsive col-md-10 col-md-offset-1"></div>
+
+  </div>
+  </div>
+    <!-- <hr> -->
+    <div id="footer" class="navbar-fixed-bottom">
+    <div class="container">
+    <footer class="github-icon" >
+      <a href="https://github.com/cristobal-io/mortgage-calculator">
+        &copy; Cristobal.io <span class="year"></span>
+                </a>
+      <a href="https://www.npmjs.com/package/mortgage-calculator"><img id="npm-logo" src="img/npm-transparent.png" ></a>
+                </footer>
+      </div>
+    </div>
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/mortgage-calculator.browserify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="js/vendor/c3.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--   <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+</body>
+
+</html>

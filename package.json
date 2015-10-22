@@ -1,0 +1,28 @@
+{
+  "name": "project-web-mortgage",
+  "version": "1.0.0",
+  "description": "Project to show the package mortgage-calculator",
+  "main": "index.html",
+  "keywords": [
+    "mortgage",
+    "calculator",
+    "loan",
+    "finance"
+  ],
+  "author": "Cristobal Gomez",
+  "homepage": "https://github.com/cristobal-io/mortgage-calculator",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:cristobal-io/mortgage-calculator.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/cristobal-io/mortgage-calculator/issues",
+    "email": "me@cristobal.io"
+  },
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-eslint": "1.0.0",
+    "gulp-webserver": "0.9.1"
+  }
+}
