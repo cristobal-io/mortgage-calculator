@@ -7,14 +7,14 @@
 }
 
 .github-icon {
-  background-image: url("/img/GitHub-Mark/GitHub-Mark-32px.png");
+  background-image: url("../img/GitHub-Mark/GitHub-Mark-32px.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 130px;
 }
 
 .github-icon-light {
-  background-image: url("/img/GitHub-Mark/GitHub-Mark-Light-32px.png");
+  background-image: url("../img/GitHub-Mark/GitHub-Mark-Light-32px.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 120px;
