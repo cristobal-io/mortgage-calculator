@@ -10,6 +10,8 @@ You can check the article about the [Underwriter](http://www.realtor.com/advice/
 
 The maximum allowed by law is a 43% before taxes, however many articles suggest that you shouldn't take a mortgage over 36%.
 
+[Demo website](http://cristobal-io.github.io/mortgage-calculator/)
+
 ---
 
 ## Formulas
