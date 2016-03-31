@@ -1,5 +1,5 @@
 /*exported _, defaultOptions*/
-
+// 
 if (typeof require !== "undefined") {
   var expect = require("expect.js"),
     formatFixtures = require("./fixtures/format_money.json"),
