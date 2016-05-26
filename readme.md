@@ -3,6 +3,8 @@
 [ ![Codeship Status for cristobal-io/mortgage-calculator](https://codeship.com/projects/17a85800-d957-0133-305b-56bde683aa9e/status?branch=master)](https://codeship.com/projects/143474)
 [![Build Status](https://travis-ci.org/cristobal-io/mortgage-calculator.svg)](https://travis-ci.org/cristobal-io/mortgage-calculator) [![Coverage Status](https://coveralls.io/repos/cristobal-io/mortgage-calculator/badge.svg?branch=master&service=github)](https://coveralls.io/github/cristobal-io/mortgage-calculator?branch=master)
 
+[Demo website](http://cristobal-io.github.io/mortgage-calculator/)
+
 This is a node module that allows you to calculate the maximum mortgage that you can afford based on your salary and the initial Deposit you will make.
 
 It is based on the assumption that no more than 36% of your salary before taxes should be designated to the mortgage to avoid financial problems.
@@ -11,7 +13,6 @@ You can check the article about the [Underwriter](http://www.realtor.com/advice/
 
 The maximum allowed by law is a 43% before taxes, however many articles suggest that you shouldn't take a mortgage over 36%.
 
-[Demo website](http://cristobal-io.github.io/mortgage-calculator/)
 
 ---
 
