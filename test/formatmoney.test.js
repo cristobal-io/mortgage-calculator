@@ -77,6 +77,7 @@ describe("Format Money: When using the fixtures it:", function () {
     it("should test " + formatFixtures[i].explanation +
       formatFixtures[i].output, checkFixtures(formatFixtures[i]));
   }
+
 });
 
 function checkFixtures(fixture) {
