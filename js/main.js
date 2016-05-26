@@ -78,11 +78,11 @@ globals $, mortgageCalculator, c3
 
   function updatePage() {
     var mortgage = mortgageCalculator.calculateMortgage({
-      "initialDeposit": +initialDeposit.value.replace(",",""),
-      "monthlyIncome": +monthlyIncome.value.replace(",",""),
-      "interest": +interest.value.replace(",",""),
-      "term": +term.value.replace(",",""),
-      "monthlyExpenses": +monthlyExpenses.value.replace(",","")
+      "initialDeposit": +initialDeposit.value.replace(/,/g,""),
+      "monthlyIncome": +monthlyIncome.value.replace(/,/g,""),
+      "interest": +interest.value.replace(/,/g,""),
+      "term": +term.value.replace(/,/g,""),
+      "monthlyExpenses": +monthlyExpenses.value.replace(/,/g,"")
     });
 
     // DOM Update.
