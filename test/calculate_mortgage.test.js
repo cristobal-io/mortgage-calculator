@@ -90,7 +90,6 @@ describe("calculateMortgage: When using function with different values than" +
 
   });
 
-
 function checkFixtures(fixture) {
   return function () {
     expect(calculateMortgage.apply(null, fixture.input)).to.eql(fixture.output);
