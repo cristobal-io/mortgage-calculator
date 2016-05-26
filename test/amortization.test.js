@@ -9,7 +9,6 @@ if (typeof require !== "undefined") {
   var amortizationFixtures = JSON.parse(request.responseText);
 }
 
-
 describe("getAmortization: when using the function, it:", function () {
 
   it("should expose a function", function () {
