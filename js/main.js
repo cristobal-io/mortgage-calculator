@@ -36,7 +36,7 @@ globals $, mortgageCalculator, c3
         max: +end,
         slide: function (event, ui) {
           //update text box quantity
-          $(slideramount).val(ui.value);
+          $(slideramount).val( mortgageCalculator.formatMoney(ui.value, {symbol: "", places: 0}));
         },
         stop: function () {
           updatePage();
@@ -44,7 +44,7 @@ globals $, mortgageCalculator, c3
       });
 
       //initialise text box quantity
-      $(slideramount).val($(this).slider("value"));
+      $(slideramount).val( mortgageCalculator.formatMoney($(this).slider("value"),{symbol: "", places: 0} ));
     });
 
     //When text box is changed, update slider
@@ -78,11 +78,11 @@ globals $, mortgageCalculator, c3
 
   function updatePage() {
     var mortgage = mortgageCalculator.calculateMortgage({
-      "initialDeposit": +initialDeposit.value,
-      "monthlyIncome": +monthlyIncome.value,
-      "interest": +interest.value,
-      "term": +term.value,
-      "monthlyExpenses": +monthlyExpenses.value
+      "initialDeposit": +initialDeposit.value.replace(",",""),
+      "monthlyIncome": +monthlyIncome.value.replace(",",""),
+      "interest": +interest.value.replace(",",""),
+      "term": +term.value.replace(",",""),
+      "monthlyExpenses": +monthlyExpenses.value.replace(",","")
     });
 
     // DOM Update.
