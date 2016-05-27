@@ -120,7 +120,7 @@ globals $, mortgageCalculator, c3
       columns[1].push((+amortizationResult[i].amortizationInterest).toFixed(2));
       columns[2].push((+amortizationResult[i].amortizationCapital).toFixed(2));
     }
-    updateChart(mortgage, +initialDeposit.value, totalInterest, columns);
+    updateChart(mortgage, +initialDeposit.value.replace(/,/g,""), totalInterest, columns);
     createTable(formatTable(amortizationResult), headers);
   }
 
