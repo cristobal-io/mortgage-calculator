@@ -1,5 +1,5 @@
 if (typeof require !== "undefined") {
-  var expect = require("expect.js"),
+  var expect = require("chai").expect,
     amortizationFixtures = require("./fixtures/amortization.json"),
     getAmortization = require("../lib/amortization.js");
 } else {

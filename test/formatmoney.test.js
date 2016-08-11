@@ -1,7 +1,7 @@
 /*exported _, defaultOptions*/
 
 if (typeof require !== "undefined") {
-  var expect = require("expect.js"),
+  var expect = require("chai").expect,
     formatFixtures = require("./fixtures/format_money.json"),
     _ = require("lodash"),
     formatMoney = require("../lib/format_money.js");
@@ -16,7 +16,7 @@ describe("Format Money: When passing different values than defaults it:",
   function () {
 
     it("should return defaults :$0.90", function () {
-      expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
+      expect(formatMoney(0.90123)).to.equal("$0.90");
     });
 
     it("should return different from defaults :$0,901", function () {
@@ -25,7 +25,7 @@ describe("Format Money: When passing different values than defaults it:",
         "symbol": "$",
         "thousand": ".",
         "decimal": ","
-      }])).to.be("$0,901");
+      }])).to.equal("$0,901");
     });
 
     it("should return different from defaults :¶0,9012", function () {
@@ -34,27 +34,24 @@ describe("Format Money: When passing different values than defaults it:",
         "symbol": "¶",
         "thousand": ".",
         "decimal": ","
-      }])).to.be("¶0,9012");
+      }])).to.equal("¶0,9012");
     });
 
     it("should return defaults :$0,90", function () {
-      expect(formatMoney.apply(null, [0.90123])).to.be("$0.90");
+      expect(formatMoney.apply(null, [0.90123])).to.equal("$0.90");
     });
 
     it("should return different from defaults :¶0,90123", function () {
       expect(formatMoney.apply(null, [0.90123, {
         "places": 5,
         "symbol": "¶"
-      }])).to.be("¶0.90123");
+      }])).to.equal("¶0.90123");
     });
 
   });
 
 describe("Format Money: when using the function, it:", function () {
 
-  it("should expose a function", function () {
-    expect(formatMoney).to.be.a("function");
-  });
 
   it("should give the result $2,000.00", function () {
     expect(formatMoney(2000)).to.eql("$2,000.00");
@@ -82,6 +79,6 @@ describe("Format Money: When using the fixtures it:", function () {
 
 function checkFixtures(fixture) {
   return function () {
-    expect(formatMoney.apply(null, fixture.input)).to.be(fixture.output);
+    expect(formatMoney.apply(null, fixture.input)).to.equal(fixture.output);
   };
 }

@@ -1,5 +1,5 @@
 if (typeof require !== "undefined") {
-  var expect = require("expect.js"),
+  var expect = require("chai").expect,
     mortgageFixtures = require("./fixtures/calculate_morgage.json"),
     calculateMortgage = require("../lib/calculate_mortgage.js");
 } else {
@@ -37,7 +37,7 @@ describe("calculateMortgage: when using the function, it:", function () {
       "interest": 0,
       "term": 1,
       "monthlyExpenses": 800
-    })).to.eql({
+    })).to.deep.equal({
       maxMonthlyPayment: 432,
       mortgageTotal: 51579.5234551,
       totalPriceHouse: 71579.5234551,
