@@ -55,6 +55,7 @@ or [download](https://raw.githubusercontent.com/cristobal-io/mortgage-calculator
 #### mortgageCalculator.getMaxMortgage
 
 This method will tell you the price of the house that you can afford.
+The value returned will be an object with numbers.
 
 ```
 mortgageCalculator.calculateMortgage(options);
@@ -96,7 +97,8 @@ Object {
 
 #### mortgageCalculator.formatMoney
 
-This method will format an integer to the desired localized format
+This method will format an integer to the desired localized format.
+The value returned will be an string.
 
 ```
 mortgageCalculator.formatMoney(number, options);
