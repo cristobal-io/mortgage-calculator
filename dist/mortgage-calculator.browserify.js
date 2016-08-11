@@ -79,6 +79,7 @@ function calculateMortgage(options) {
   // economic formula for maximum pay.
   var findMaxPay = function (monthlyIncome, monthlyExpenses) {
     var maxPay = (monthlyIncome - monthlyExpenses) * settings.riskRate;
+
     return maxPay;
   };
 
@@ -87,6 +88,7 @@ function calculateMortgage(options) {
     var mortgage =
       (pay * ((1 - (Math.pow((1 +
         (monthlyInterest / 100)), -totalPeriods))))) / (monthlyInterest / 100);
+
     return mortgage;
   };
 
@@ -108,16 +110,18 @@ function calculateMortgage(options) {
       interest: options.interest / 12
     });
   }
+
   return {
     maxMonthlyPayment: maxMonthlyPayment,
-    totalPriceHouse: totalPriceHouse.toFixed(7),
-    mortgageTotal: mortgageTotal.toFixed(7),
-    totalInterest: totalInterest.toFixed(7)
+    mortgageTotal: +mortgageTotal.toFixed(7), // toFixed() converts the value to
+    totalPriceHouse: +totalPriceHouse.toFixed(7), // string, so we add a +
+    totalInterest: +totalInterest.toFixed(7) // that converts it back to number.
   };
 }
 
 function getMaxTerm(age, maxAge, periodsRequested) {
   var maxPeriods = ((maxAge - age) * 12);
+
   if (maxPeriods > periodsRequested) {
     return periodsRequested;
   } else {
