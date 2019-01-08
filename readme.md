@@ -224,3 +224,4 @@ make testem
 <a name="formula">1</a>: _This formula comes from:_
 
  ![payment](./img/payment_mortgage_formula.png)
+
